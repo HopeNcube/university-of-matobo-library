@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="University of Matobo Library — cultivating knowledge, growing futures.">
+  <title>University of Matobo Library</title>
+  <style>
+    :root{--red:#b5122b;--blue:#123b70;--ink:#17243a;--muted:#5d6b7d;--pale:#f3f6fa;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{color:inherit;text-decoration:none}
+    .topbar{background:var(--blue);color:#fff;padding:8px 5%;font-size:.86rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{background:#fff;border-bottom:1px solid #e7ebf0;position:sticky;top:0;z-index:10}
+    .navwrap{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue);line-height:1.15}
+    .crest{width:48px;height:48px;border-radius:12px;background:var(--red);color:white;display:grid;place-items:center;font-size:1.1rem;font-weight:900}
+    .brand small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.06em;margin-top:4px}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:.9rem;font-weight:700}
+    nav a:hover{color:var(--red)}
+    .hero{background:linear-gradient(115deg,rgba(11,39,75,.96),rgba(18,59,112,.88)),linear-gradient(45deg,#b5122b,#123b70);color:#fff;padding:82px 24px}
+    .hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.35fr .65fr;gap:42px;align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:800;color:#f5c5ce}
+    h1{font-size:clamp(2.3rem,5vw,4.4rem);line-height:1.08;margin:14px 0 18px;max-width:760px}
+    .hero p{font-size:1.12rem;color:#e8eef7;max-width:680px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-block;padding:12px 19px;border-radius:7px;font-weight:800;background:var(--red);color:#fff}
+    .btn.secondary{background:#fff;color:var(--blue)}
+    .hero-panel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:25px;border-radius:16px}
+    .hero-panel h2{margin:0 0 10px;font-size:1.35rem}.hero-panel p{font-size:.98rem;margin:0}
+    .search{max-width:1180px;margin:-28px auto 0;padding:0 24px;position:relative}
+    .searchbox{background:#fff;box-shadow:0 12px 35px rgba(12,34,64,.13);border-radius:12px;padding:20px;display:flex;gap:12px;align-items:center}
+    .searchbox input{flex:1;border:1px solid #d9e0e8;border-radius:7px;padding:14px;font-size:1rem;min-width:0}
+    .searchbox button{border:0;border-radius:7px;background:var(--red);color:#fff;padding:14px 22px;font-weight:800;cursor:pointer}
+    section{padding:66px 24px}.container{max-width:1180px;margin:auto}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 34px}
+    .section-head .kicker{color:var(--red);text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:800}
+    h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.2;margin:8px 0 12px;color:var(--blue)}
+    .section-head p{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{border:1px solid #e3e8ef;border-radius:12px;padding:24px;background:#fff;transition:.2s}
+    .tile:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(18,59,112,.09)}
+    .tile .symbol{width:42px;height:42px;border-radius:10px;background:#fbecef;color:var(--red);display:grid;place-items:center;font-size:1.2rem;font-weight:900}
+    .tile h3{color:var(--blue);margin:14px 0 7px}.tile p{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+    .tile a{font-weight:800;color:var(--red);font-size:.9rem}
+    .hub{background:var(--pale)}
+    .hubbox{background:linear-gradient(110deg,var(--blue),#1d568f);border-radius:18px;padding:38px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+    .hubbox h2{color:#fff}.hubbox p{max-width:720px;color:#e6edf7}
+    .hubbox .btn{background:#fff;color:var(--blue);white-space:nowrap}
+    .programmes{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .programme{background:#fff;border:1px solid #e3e8ef;border-top:4px solid var(--red);padding:18px 14px;border-radius:8px;text-align:center;font-weight:800;color:var(--blue)}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+    .about-card{background:#f7f8fb;border-radius:14px;padding:28px;border-left:5px solid var(--red)}
+    .about-card h3{margin-top:0;color:var(--blue)}
+    .notice{font-size:.85rem;color:var(--muted);background:#fff8e8;border:1px solid #f1dfb7;padding:13px 16px;border-radius:8px;margin-top:18px}
+    footer{background:#0c2749;color:#fff;padding:36px 24px}
+    .footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    footer p{color:#d7e0ec;margin:6px 0}
+    .copyright{border-top:1px solid rgba(255,255,255,.18);margin-top:24px;padding-top:16px;color:#c4d0df;font-size:.85rem}
+    @media(max-width:850px){.hero-inner,.about{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.programmes{grid-template-columns:repeat(2,1fr)}nav{gap:10px}}
+    @media(max-width:560px){.navwrap{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.searchbox{flex-direction:column;align-items:stretch}.searchbox button{width:100%}.hubbox{grid-template-columns:1fr}.topbar{font-size:.78rem}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>University of Matobo · Library Services</span><span>Supporting teaching · learning · research · innovation</span></div>
+  <header>
+    <div class="navwrap">
+      <a class="brand" href="#home"><span class="crest">UM</span><span>UNIVERSITY OF MATOBO LIBRARY<small>CULTIVATING KNOWLEDGE, GROWING FUTURES</small></span></a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#resources">Resources</a><a href="#hub">Drylands Hub</a><a href="#programmes">Programmes</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div><div class="eyebrow">Knowledge · Discovery · Impact</div>
+          <h1>Discover knowledge.<br>Grow possibilities.</h1>
+          <p>Welcome to the University of Matobo Library. Explore information resources and research support that advance learning, scholarship and sustainable development.</p>
+          <div class="actions"><a class="btn" href="#resources">Explore library resources</a><a class="btn secondary" href="#about">Meet the Library</a></div>
+        </div>
+        <div class="hero-panel"><h2>Knowledge for a changing world</h2><p>Access learning support, discover scholarly information and connect with resources across the University’s academic programmes.</p></div>
+      </div>
+    </section>
+    <div class="search"><form class="searchbox" onsubmit="event.preventDefault(); alert('The library catalogue is not yet connected. Please contact the Library for assistance.');"><input aria-label="Search library resources" placeholder="Search the library catalogue (coming soon)" /><button type="submit">Search</button></form></div>
+
+    <section id="resources">
+      <div class="container"><div class="section-head"><div class="kicker">Start exploring</div><h2>Library resources and services</h2><p>Use these sections to find learning materials, research support and information services. Links can be connected as university systems become available.</p></div>
+        <div class="grid">
+          <article class="tile"><div class="symbol">01</div><h3>Library Catalogue</h3><p>Search books, journals and other materials held by the University Library. The online catalogue will be connected here when available.</p><a href="#contact">Catalogue coming soon →</a></article>
+          <article class="tile"><div class="symbol">02</div><h3>E-Books and E-Journals</h3><p>Find electronic books, scholarly journals and trusted academic information resources.</p><a href="#contact">Ask about e-resources →</a></article>
+          <article class="tile"><div class="symbol">03</div><h3>Research Repository</h3><p>Discover the University’s research outputs, dissertations, publications and other scholarly work as the repository develops.</p><a href="#contact">Repository information →</a></article>
+          <article class="tile"><div class="symbol">04</div><h3>Research Support</h3><p>Get help with literature searching, referencing, academic databases and scholarly communication.</p><a href="#contact">Request research support →</a></article>
+          <article class="tile"><div class="symbol">05</div><h3>Information Literacy</h3><p>Build skills to find, evaluate, use and communicate information effectively and ethically.</p><a href="#contact">Learning support →</a></article>
+          <article class="tile"><div class="symbol">06</div><h3>Open Access Resources</h3><p>Explore openly available research, educational materials and knowledge resources.</p><a href="https://doaj.org/" target="_blank" rel="noopener">Explore open access journals →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hub" id="hub"><div class="container"><div class="hubbox"><div><div class="eyebrow">Our distinctive knowledge area</div><h2>Drylands Agriculture Knowledge Hub</h2><p>A dedicated gateway to information on dryland farming, climate resilience, water-smart agriculture, soil health, sustainable livelihoods and community development.</p></div><a class="btn" href="#contact">Explore the Knowledge Hub</a></div></div></section>
+
+    <section id="programmes"><div class="container"><div class="section-head"><div class="kicker">Learning across disciplines</div><h2>Resources for every programme</h2><p>Library services support the University’s academic programmes and the research interests of its community.</p></div>
+      <div class="programmes"><div class="programme">Agriculture</div><div class="programme">Computer Science</div><div class="programme">Education</div><div class="programme">Theology</div><div class="programme">Business Administration</div></div>
+    </div></section>
+
+    <section id="about"><div class="container about"><div><div class="kicker">About us</div><h2>A library for learning, research and innovation</h2><p>The University of Matobo Library is committed to providing equitable access to quality information resources, digital technologies and professional services. We support teaching, learning, research and innovation, with a distinctive focus on sustainable drylands agriculture and societal development.</p><p><strong>Our vision:</strong> To be a leading, inclusive and digitally enabled academic library advancing excellence in teaching, learning, research and innovation.</p></div>
+      <div class="about-card"><h3>Our mission</h3><p>To provide equitable access to quality information resources, digital technologies and professional library services that support the University community and advance knowledge for sustainable development.</p><h3>Our tagline</h3><p><strong>Cultivating Knowledge, Growing Futures.</strong></p></div>
+    </div></section>
+  </main>
+  <footer id="contact"><div class="footer-inner"><div><strong>UNIVERSITY OF MATOBO LIBRARY</strong><p>Cultivating Knowledge, Growing Futures.</p></div><div><strong>Contact the Library</strong><p>Please add the official library email, telephone number and campus location here before publishing.</p><p>Library enquiries · Research support · Information literacy</p></div></div><div class="copyright">© <span id="year"></span> University of Matobo Library. All rights reserved.</div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
